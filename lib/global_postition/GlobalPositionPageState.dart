@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:m_bank/common_components/BottonNavigationWidget.dart';
 import 'package:m_bank/global_postition/GlobalPositionWidget.dart';
 import 'package:m_bank/global_postition/TransactionsWidget.dart';
 
@@ -13,18 +14,23 @@ class GlobalPositionPageState extends State<GlobalPositionPage> {
       ),
       body: Center(
         child: Column(
-//          mainAxisAlignment: MainAxisAlignment.center,
+//          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: GlobalPositionWidget())),
-            Align(
-                alignment: Alignment.bottomCenter, child: TransactionsWidget())
+              alignment: Alignment.center,
+              heightFactor: 5,
+              child: GlobalPositionWidget(),
+            ),
+            Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: TransactionsWidget()
+                  ),
+            )
           ],
         ),
       ),
+      bottomNavigationBar: BottonNavigationWidget(),
     );
   }
 }
